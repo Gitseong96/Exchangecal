@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState, KeyboardEvent } from 'react';
+import { useState, KeyboardEvent } from 'react';
 
 import './App.css';
 
@@ -11,31 +11,22 @@ function App() {
   const [amountNum, setAmountNum] = useState<number>(0)
 
   const { data, status } = useExchcnage(before, after, amountNum);
-  console.log(data)
 
   if (status === "loading") {
     return <span>Loading...</span>
   }
   const changeBeforeSelectValue = (e: React.ChangeEvent<HTMLSelectElement>) => {
-
     setBefore(e.target.value)
-
   }
   const changeAfterSelectValue = (e: React.ChangeEvent<HTMLSelectElement>) => {
-
     setAfter(e.target.value)
   }
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const onChangeAmount = (e: KeyboardEvent<HTMLInputElement>) => {
     const { value } = e.target as HTMLInputElement
-
     setAmountNum(Number(value))
-
   }
 
   return (
-
-
     <div className="App">
       <div className='container'>
         <form>
