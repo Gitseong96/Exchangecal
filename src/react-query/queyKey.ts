@@ -7,7 +7,8 @@ const ExchangeKey = {
     THB: "THB",
     SGD: "SGD",
     VND: "VND",
-    JPY: "JPY"
+    JPY: "JPY",
+    CAD: "CAD"
 }
 
 export { ExchangeKey }
